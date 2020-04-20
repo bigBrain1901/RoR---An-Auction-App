@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title> Welcome Page </title>
+  <meta name="description" content="My first Ruby on Rails App">
+  <meta name="author" content="Ishaan Singh">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <% stylesheet_link_tag('users.css') %>
+</head>
+<body>
+  <div class="nav"> <% render(partial: 'navbar') %> </div>
+  <div class="login-form"> <% render partial: 'login_form' %> </div>
+  <div class="signup-form"> <% render partial: 'signup_form' %> </div>
+  <div class="footer"> <% render(partial: 'footer') %> </div>
+</body>

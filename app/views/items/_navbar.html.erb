@@ -1,0 +1,7 @@
+<div class="nav-heading"> My Auction App </div>
+<div class="nav-links">
+  <% link_to 'Add an Item', {controller: 'items', action: 'add'}, class: 'nav-link' %>
+  <% link_to 'Auction Dashboard', {controller: 'items', action: 'index'}, class: 'nav-link' %>
+  <% link_to 'User Dashboard', {controller: 'users', action: 'display'} %>
+  <% link_to 'Logout', {controller: 'users', action: 'logout'} %>
+</div>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>My Auction App</title>
+    <meta name="description" content="My first Ruby on Rails App">
+    <meta name="author" content="Ishaan Singh">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <% stylesheet_link_tag('homepage.css') %>
+  </head>
+  <body>
+    <div class="bg"> <% image_path('homepage.jpg') %> </div>
+    <div class="heading"> My Auction App </div>
+    <span class="btn"> <% link_to 'Enter the Auction', {controller: 'users', action: 'index'} %> </span>
+    <span class="btn"> <% link_to 'About me and my app...', {controller: 'users', action: 'about'} %> </span>
+  </body>

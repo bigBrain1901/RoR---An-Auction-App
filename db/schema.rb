@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_20_095917) do
+ActiveRecord::Schema.define(version: 2020_04_20_162158) do
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2020_04_20_095917) do
     t.bigint "highest_bidder"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "status"
     t.index ["creator_id"], name: "fk_rails_abba16b043"
     t.index ["highest_bidder"], name: "fk_rails_5db6409530"
     t.index ["name"], name: "index_items_on_name"

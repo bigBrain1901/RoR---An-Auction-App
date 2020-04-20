@@ -1,0 +1,14 @@
+<%# needs user %>
+
+<div class="heading"> User Profile </div>
+<form action="/users/<% user.id %>" method="post">
+  <label for="user-rno" class="form-label"> Roll Number </label>
+  <input type="text" maxlength="8" minlength="7" id="user-rno" disabled placeholder="<% user.rno %>">
+  <label for="user-name" class="form-label"> Display Name </label>
+  <input type="text" class="form-text" placeholder="<% user.name %>" id="user-name">
+  <label for="user-pwd" class="form-label"> Password </label>
+  <input type="password" class="form-text" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="New Password?" id="user-pwd">
+  <label for="user-pno" class="form-label"> Phone Number </label>
+  <input type="number" minlength="10" maxlength="10" placeholder="<% user.pno %>" id="user-pno">
+  <button type="submit" value="type" class="form-btn"> Update profile </button>
+</form>

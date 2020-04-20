@@ -1,0 +1,30 @@
+<%# needs items[], current_user %>
+
+<div class="heading"> Login here </div>
+<% if items.length > 1 %>
+<div class="main-carousel">
+  <% items.each do |item| %>
+    <div class="carousel-cell">
+      <div class="item-card">
+        <div class="card-heading"> <% item.name %> </div>
+        <div class="card-image"> <% image_path(item.image) %> </div>
+        <div class="card-desc"> <% item.desc %> </div>
+        <div class="card-link"> <% link_to "Read more and bid", {controller: 'items', action: 'display'} %> </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<% else %>
+  <% Item item = items[0] %>
+  <div class="item-heading"> <% item.name %> </div>
+  <div class="item-image"> <% image_path(item.image) %> </div>
+  <div class="item-desc"> <% item.desc %> </div>
+  <div class="item-link"> <% link_to "Read more and bid", {controller: 'items', action: 'display'} %> </div>
+  <div class="btn-grp">
+    <% if item.creator_id == current_user && item.current_bid == item.starting_bid && item.status == '0' %>
+      <% link_to "Remove item from auction", {controller: 'items', action: 'destroy', id: item.id} %>
+    <% end %>
+    <% link_to "Bid for Rs "+item.current_bid+(0.1*item.starting_bid+0.5).to_i, {controller: 'items', action: 'bid', id: item.id} %>
+    <% link_to "Go back to all items", {controller: 'items', action: 'index'} %>
+  </div>
+<% end %>

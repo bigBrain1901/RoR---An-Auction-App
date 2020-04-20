@@ -1,0 +1,18 @@
+--------------------------------------------------------------------------------------------------------------------------------------------
+    ROUTES              METHOD      HANDLER             PURPOSE                                     PAGE NAME                STATUS
+--------------------------------------------------------------------------------------------------------------------------------------------
+    /                   get         app#index           To display the landing page                 Auction App              html ready
+
+    /users              get         users#index         To display the login / sign-up form         Welcome Page             html ready
+    /users              post        users#validate      To sign-up or log the user in               N/A                      route setup
+    /users/:user        get         users#display       To present profile and options above        My Profile               route setup
+    /users/:user        put         users#update        To update user details                      N/A                      route setup
+    /users/:user        delete      user#destroy        To delete user's account                    N/A                      route setup
+
+    /items              get         items#index         To show all items on/off auction            Auction Dashboard        route setup
+    /items              post        items#upload        To display upload item form                 N/A                      route setup
+    /items/:item        get         items#display       To show one item and its details            Item View                route setup
+    /items/:item        put         items#update        To update item details before bidding       N/A                      route setup
+    /items/:item        delete      items#destroy       To delete the item before bidding           N/A                      route setup
+    /items/bid          get         items#bid           To bid on shown item                        N/A                      route setup
+--------------------------------------------------------------------------------------------------------------------------------------------

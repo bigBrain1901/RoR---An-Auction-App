@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title> Item View </title>
+  <meta name="description" content="My first Ruby on Rails App">
+  <meta name="author" content="Ishaan Singh">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <% stylesheet_link_tag('items.css') %>
+</head>
+<body>
+<div class="nav"> <% render partial: 'navbar' %> </div>
+<div class="display"> <% render partial: 'display_items' %> </div>
+<div class="footer"> <% render partial: 'footer' %> </div>
+</body>
